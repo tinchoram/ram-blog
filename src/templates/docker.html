@@ -1,19 +1,24 @@
 {% extends 'base.html' %}
     {% block note %}
                 
-                    <h1 class="text-center">Docker</h1>
-                    <p>En este note vas a encontrar una lista de los comandos mas utilizados en Docker</p>
+                    <h1 class="text-center">Docker 🐋</h1>
+                    <p>En este note vas a encontrar una lista de los comandos mas utilizados para trabajar con Docker</p>
                     <p></p>
-                
-                    <p>🔹 Listar, ordenando por los ultimos archivos modificados:</p>
+
+                    <p>📋🚚 Listar todos los contenedores (docker ps [OPTIONS])</p>
                     <div class="shell">
-                        <p>ls -lrt &lt;path&gt;</p>
+                        <p>docker ps -a</p>
                     </div>
-                    <p>Ejemplo:</p>
+                    <br>
+                    <p>🚮🚚 Borrar todos los contenedores (docker container COMMAND)</p>
                     <div class="shell">
-                        <p>ls -lrt /home</p>
+                        <p>docker container prune</p>
                     </div>
-                    
+                    <br>
+                    <p>⚒🧱 Construir imagen (docker build [OPTIONS] pathDockerfile)</p>
+                    <div class="shell">
+                        <p>docker build -t image-name .</p>
+                    </div>
                     <hr>
                     <div class="note-footer">
                         <p>Marzo 2021</p>
