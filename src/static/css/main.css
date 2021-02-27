@@ -3,7 +3,9 @@ html {
 }
 
 .note {
-    font-size: 1.2em
+    font-size: 1.2em;
+    text-align: justify;
+    text-justify:inter-word;
 }
 
 .note-footer {
@@ -21,6 +23,11 @@ html {
 
 .shell p {
     color: #f8f8f2;
+    margin-bottom: 0;
+}
+
+.items p {
+    color: #80807e;
     margin-bottom: 0;
 }
 
