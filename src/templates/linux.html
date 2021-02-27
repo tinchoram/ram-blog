@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
     {% block note %}
                 
-                    <h1 class="text-center">Linux</h1>
+                    <h1 class="text-center">Linux 🐧</h1>
                     <p>En este note vas a encontrar notas sobre Linux que te van ayudar en el trabajo
                     diario y los comandos mas utilizados para hacer troubleshooting</p>
                     <p></p>
 
-                    <p>🔹 Primero lo primero Arbol de directorios</p>
+                    <p>💻 Primero lo primero Arbol de directorios</p>
                     <div class="items">
-                        <p>🔸 /     👉 Raiz o Root: Directorio raiz</p>
-                        <p>🔸 /bin  👉 Binarios: Binarios de usuario como cp, echo, grep, mv, etc...</p>
-                        <p></p>
+                        <p>#️⃣ <b>/</b>&emsp;&emsp;&emsp;&emsp;👉 Raiz o Root: Directorio raiz.</p>
+                        <p>#️⃣ <b>/bin</b>&emsp;&emsp;&nbsp; 👉 Binarios: Binarios de usuario como cp, echo, grep, mv, etc...</p>
+                        <p>#️⃣ <b>/boot</b>&emsp;&nbsp;&nbsp;&nbsp;👉 Boot: Ejecutables y archivos de arranque.</p> 
+                        <p>#️⃣ <b>/dev</b>&emsp;&emsp;&nbsp; 👉 Dev: Archivos de volúmenes.</p> 
+                        <p>#️⃣ <b>/etc</b>&emsp;&emsp;&nbsp; 👉 Etc: Confirguracion de sistema y apps.</p> 
+                        <p>#️⃣ <b>/home</b>&emsp; 👉 Home: Directorio de personal User.</p> 
+                        <p>#️⃣ <b>/lib</b>&emsp;&emsp;&nbsp; 👉 Lib: Blibliotecas para los binarios.</p> 
+                        <p>#️⃣ <b>/media</b>&emsp;👉 Media: Directorio de montaje.</p> 
+                        <p>#️⃣ <b>/opt</b>&emsp;&emsp;&nbsp; 👉 Opt: Apps externas.</p> 
+                        <p>#️⃣ <b>/proc</b>&emsp;&nbsp;&nbsp;&nbsp;👉 Proc: Información de procesos.</p> 
+                        <p>#️⃣ <b>/root</b>&emsp;&nbsp;&nbsp;&nbsp;👉 Root: Directorio del SuperUser.</p> 
+                        <p>#️⃣ <b>/sbin</b>&emsp;&nbsp;&nbsp;&nbsp;👉 Sbin: Binarios del Sistema.</p> 
+                        <p>#️⃣ <b>/srv</b>&emsp;&emsp;&nbsp; 👉 Srv: Archivos relativos a servers (web, FTP, etc).</p> 
+                        <p>#️⃣ <b>/sys</b>&emsp;&emsp;&nbsp; 👉 Sys: Archivos virtuales con info de eventos del sistema.</p> 
+                        <p>#️⃣ <b>/tmp</b>&emsp;&emsp;&nbsp;👉 Tmp: Directorio de archivos temporales.</p> 
+                        <p>#️⃣ <b>/usr</b>&emsp;&emsp;&nbsp; 👉 Usr: Archivos de programas y Apps instaladas.</p> 
+                        <p>#️⃣ <b>/var</b>&emsp;&emsp;&nbsp; 👉 Var: Directorio de archivos variales, logs, registros, etc...</p>  
                     </div>
-
-                    <div class="shell">
-                        
-                    </div>
-
+                    <br>
                     <p>🔹 Listar, ordenando por los ultimos archivos modificados:</p>
                     <div class="shell">
                         <p>ls -lrt &lt;path&gt;</p>
