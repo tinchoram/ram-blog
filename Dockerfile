@@ -11,6 +11,6 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r ../requirements.t
 
 COPY ["./src", "."]
 #COPY src .
-EXPOSE 5000
-CMD [ "python", "blog.py" ]
-#CMD ["gunicorn", "-w", "3", "-b", ":5000", "-t", "360", "--reload", "wsgi:app"]
+#EXPOSE 5000
+#CMD [ "python", "blog.py" ]
+CMD ["gunicorn", "-w", "1", "-b", ":5000", "-t", "360", "--reload", "wsgi:app"]
