@@ -13,4 +13,4 @@ COPY ["./src", "."]
 #COPY src .
 #EXPOSE 5000
 #CMD [ "python", "blog.py" ]
-CMD ["gunicorn", "-w", "1", "-b", ":5000", "-t", "360", "--reload", "wsgi:app"]
+CMD ["gunicorn", "-w", "1", "-b", ":80", "-t", "360", "--reload", "wsgi:app"]
