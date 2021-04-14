@@ -2,13 +2,59 @@
     {% block note %}
                 
                     <h1 class="text-center">Python</h1>
+                    <p>En este note vas a encontrar los comandos más utilizados para trabajar con Python 🐍😍</p>
                     <p></p>
-                    <p></p>
-            
+                    <br>
+                    <p>📁 Crear entorno virtual (python -m venv nombre_venv)</p>
+                    <div class="shell">
+                        <p>python -m venv venv</p>
+                    </div>
+                    <br>
+                    <p>📁 Activar entorno virtual</p>
+                    <div class="shell">
+                        <p>Windows: .\venv\Scripts\activate</p>
+                        <p>Linux o Mac: source venv/bin/activate</p>
+                    </div>
+                    <br>
+                    <p>📁 Desactivar entorno virtual</p>
+                    <div class="shell">
+                        <p>deactivate</p>
+                    </div>
+                    <br>
+                    <p>📁 Instalar dependencias con pip (Package Installer for Python): pip install module_name</p>
+                    <div class="shell">
+                        <p>pip install pandas</p>
+                    </div>
+                    <br>
+                    <p>📁 Listar paquetes instalados en Python</p>
+                    <div class="shell">
+                        <p>pip freeze</p>
+                    </div>
+                    <br>
+                    <p>📄 Crear requirements.txt</p>
+                    <div class="shell">
+                        <p>pip freeze > requirements.txt</p>
+                    </div>
+                    <br>
+                    <p>📄 Instalar requirements.txt</p>
+                    <div class="shell">
+                        <p>pip install -r requirements.txt</p>
+                    </div>
+                    <br>
+                    <p>📄 Instalar requirements.txt</p>
+                    <div class="shell">
+                        <p>pip install -r requirements.txt</p>
+                    </div>
+                    <br>
+                    <p>📄 Debugging</p>
+                    <div class="shell">
+                        <p>import pdb; pdb.set_trace()</p>
+                    </div>
+
                     
                     <hr>
                     <div class="note-footer">
-                        <p>Marzo 2021</p>
+                        <p>Abril 2021</p>
                     </div>
                 
     {% endblock %}
