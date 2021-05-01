@@ -10,5 +10,5 @@ test_job:
   stage: test
   script:
     - echo "Running tests"
-    #- flask test
-    - python -m unittest discover -s "./src/tests/"
+    - flask test
+    #- python -m unittest discover -s "./src/tests/"
