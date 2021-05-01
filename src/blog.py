@@ -1,5 +1,14 @@
 from flask import Flask, render_template, redirect
+import unittest
+
 app = Flask(__name__)
+
+
+@app.cli.command()
+def test():
+    tests = unittest.TestLoader().discover('tests')
+    unittest.TextTestRunner().run(tests)
+
 
 @app.route('/linux', methods=['GET'])
 def linux():
