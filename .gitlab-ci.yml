@@ -25,13 +25,14 @@ test_flake8:
     - echo "Running tests"
     - flake8 --statistics --count
 
-deploy_prod:
+deploy:
   stage: deploy
   script:
     - echo "Deploy to production server"
   environment:
     name: production
     url: https://kube.tinchoram.com
-  when: manual
+    kubernetes:
+      namespace: production
   only:
     - master
