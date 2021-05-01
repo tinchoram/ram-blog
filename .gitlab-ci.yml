@@ -44,6 +44,8 @@ deploy-master:
   stage: deploy
   image: bitnami/kubectl:latest
   script:
+    - echo $CI_REGISTRY_IMAGE
+    - echo $CI_COMMIT_SHA
     - kubectl get deployment ram-blog || kubectl create deployment ram-blog --image="$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
     - kubectl set image deployment/ram-blog ram-blog="$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
   only:
