@@ -5,10 +5,11 @@ stages:
   - Deploy
 
 docker-build:
-  image: docker:latest
+  image: docker:stable
   stage: build
   services:
     - docker:dind
+    alias: thedockerhost
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   script:
@@ -16,7 +17,8 @@ docker-build:
     - docker build --pull -t "$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA" .
     - docker push "$CI_REGISTRY_IMAGE"
   variables:
-    DOCKER_HOST: tcp://localhost:2375
+    DOCKER_HOST: tcp://thedockerhost:2375/
+    DOCKER_DRIVER: overlay2
     DOCKER_TLS_CERTDIR: ""
 
 test_flask:
