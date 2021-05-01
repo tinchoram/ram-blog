@@ -23,12 +23,20 @@ docker-build:
 
 test_flask:
   stage: Test
+  before_script:
+    - python --version
+    - cd src/
+    - pip install --upgrade pip && pip install --no-cache-dir -r ../requirements_test.txt
   script:
     - echo "Running tests"
     - flask test
 
 test_flake8:
   stage: Test
+  before_script:
+    - python --version
+    - cd src/
+    - pip install --upgrade pip && pip install --no-cache-dir -r ../requirements_test.txt
   script:
     - echo "Running tests"
     - flake8 --statistics --count
