@@ -43,8 +43,9 @@ test_flake8:
 
 deploy-master:
   stage: Deploy
-  image: bitnami/kubectl
+  image: bitnami/kubectl:latest
   script:
+    - kubectl get all
     - kubectl get deployment ram-blog || kubectl create deployment ram-blog --image="$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
     - kubectl set image deployment/ram-blog ram-blog="$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
   only:
