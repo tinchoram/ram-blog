@@ -1,29 +1,16 @@
 {% extends 'base.html' %}
     {% block note %}
                 
-                    <h1 class="text-center">Docker 🐋</h1>
-                    <p>En este note vas a encontrar una lista de los comandos mas utilizados para trabajar con Docker</p>
+                    <h1 class="text-center">Kubernetes ⚙🐋</h1>
+                    <p>En este note vas a encontrar una lista de los comandos mas utilizados para trabajar con Kubernetes</p>
                     <p></p>
 
-                    <p>📋🚚 Listar todos los contenedores (docker ps [OPTIONS])</p>
+                    <p>📋🚚 Listar todos los Nodos (kubectl get [flags] [options])</p>
                     <div class="shell">
-                        <p>docker ps -a</p>
+                        <p>kubectl get nodes -o wide</p>
                     </div>
                     <br>
-                    <p>🚮🚚 Borrar todos los contenedores (docker container COMMAND)</p>
-                    <div class="shell">
-                        <p>docker container prune</p>
-                    </div>
-                    <br>
-                    <p>⚒🧱 Construir imagen (docker build [OPTIONS] pathDockerfile)</p>
-                    <div class="shell">
-                        <p>docker build -t image-name .</p>
-                    </div>
-                    <br>
-                    <p>▶🚚 Correr un contenedor (docker run [OPTIONS] IMAGE [COMMAND] [ARG...])</p>
-                    <div class="shell">
-                        <p>docker run -d --rm -p 80:5000 --name container-name image-name</p>
-                    </div>
+                
                     
                     <hr>
                     <div class="note-footer">
