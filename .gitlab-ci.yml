@@ -11,6 +11,7 @@ before_script:
   # Stages in the pipeline
 stages:
   - Test
+  - deploy
 
 test_flask:
   stage: Test
@@ -23,3 +24,10 @@ test_flake8:
   script:
     - echo "Running tests"
     - flake8 --statistics --count
+
+deploy to production:
+  stage: deploy
+  script: make deploy
+  environment:
+    name: production
+    url: https://kube.tinchoram.com/
