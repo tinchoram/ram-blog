@@ -8,7 +8,7 @@ docker-build:
   image: docker:20-dind
   stage: build
   services:
-  - name: docker:dind
+  - name: docker:20-dind
     alias: thedockerhost
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
