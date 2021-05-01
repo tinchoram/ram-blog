@@ -22,7 +22,7 @@ analisis_job:
 test_job:
   stage: Test
   dependencies:
-    - install_dependencies
+    - analisis_job
   script:
     - echo "Running tests"
     - flask test
