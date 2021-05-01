@@ -2,7 +2,7 @@ image: python:3
 stages:
   - build
   - Test
-  - Deploy
+  - deploy
 
 docker-build:
   image: docker:stable
@@ -42,10 +42,9 @@ test_flake8:
     - flake8 --statistics --count
 
 deploy-master:
-  stage: Deploy
+  stage: deploy
   image: bitnami/kubectl:latest
   script:
-    - kubectl get all
     - kubectl get deployment ram-blog || kubectl create deployment ram-blog --image="$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
     - kubectl set image deployment/ram-blog ram-blog="$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
   only:
