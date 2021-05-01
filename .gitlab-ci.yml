@@ -33,6 +33,7 @@ deploy:
     name: production
     url: https://kube.tinchoram.com
     kubernetes:
-      namespace: production
+      namespace: $KUBE_NAMESPACE
+
   only:
     - master
