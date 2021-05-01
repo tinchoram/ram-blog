@@ -1,24 +1,23 @@
 # This file is a Ram template
 image: python:3
 stages:
-  - Build
+  - build
   - Test
   - Deploy
 
-build_step:
-  image: docker:lasted
-  stage: Build
+docker-build:
+  image: docker:latest
+  stage: build
   services:
     - docker:dind
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA" .
     - docker push "$CI_REGISTRY_IMAGE"
   variables:
-    - DOCKER_HOST: tcp://localhost:2375
-    - DOCKER_TLS_CERTDIR: ""
-
+    DOCKER_HOST: tcp://localhost:2375
+    DOCKER_TLS_CERTDIR: ""
 
 test_flask:
   stage: Test
