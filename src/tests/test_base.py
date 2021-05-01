@@ -10,20 +10,18 @@ class MainTest(TestCase):
 
         return app
 
-
-    ### TEST BASE ###
-
-    ### APP EXIST ###
+    # TEST BASE
+    # APP EXIST
     def test_app_exists(self):
         """ param app
         """
         self.assertIsNotNone(current_app)
 
-    ### TEST MODE ###
+    # TEST MODE
     def test_app_in_test_mode(self):
         self.assertTrue(current_app.config['TESTING'])
-    
-    ### TEST INDEX ###
+
+    # TEST INDEX
     def test_index_get(self):
         response = self.client.get(url_for('index'))
 

@@ -16,28 +16,34 @@ def linux():
     #         'items': '12345',
     #         'name': 'Tinchoram',
     #     }
-    #return render_template('linux.html', **context)
+    # return render_template('linux.html', **context)
     return render_template('linux.html')
+
 
 @app.route('/python', methods=['GET'])
 def note_python():
     return render_template('python.html')
 
+
 @app.route('/docker', methods=['GET'])
 def note_docker():
     return render_template('docker.html')
+
 
 @app.route('/go', methods=['GET'])
 def note_go():
     return render_template('go.html')
 
+
 @app.route('/notes', methods=['GET'])
 def notes():
     return render_template('notes.html')
 
+
 @app.route('/blog', methods=['GET'])
 def blog():
     return redirect('notes')
+
 
 @app.route('/', methods=['GET'])
 def index():
