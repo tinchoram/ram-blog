@@ -17,8 +17,8 @@ docker-build:
     - docker build --pull -t "$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA" .
     - docker push "$CI_REGISTRY_IMAGE"
   variables:
-    DOCKER_HOST: tcp://localhost:2375/
-    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
 
 test_flask:
   stage: Test
