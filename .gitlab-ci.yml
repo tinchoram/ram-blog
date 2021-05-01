@@ -1,5 +1,4 @@
 # This file is a Ram template
-image: python:3
 stages:
   - build
   - Test
@@ -13,6 +12,7 @@ docker-build:
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   script:
+    - docker -v
     - docker build --pull -t "$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA" .
     - docker push "$CI_REGISTRY_IMAGE"
   variables:
@@ -20,12 +20,14 @@ docker-build:
     DOCKER_TLS_CERTDIR: ""
 
 test_flask:
+  image: "$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
   stage: Test
   script:
     - echo "Running tests"
     - flask test
 
 test_flake8:
+  image: "$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
   stage: Test
   script:
     - echo "Running tests"
