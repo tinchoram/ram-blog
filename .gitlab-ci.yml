@@ -1,28 +1,19 @@
-# This file is a template, and might need editing before it works on your project.
-# Official language image. Look for the different tagged releases at:
-# https://hub.docker.com/r/library/python/tags/
+# This file is a Ram template
+# Image to use
 image: "python:3.7" 
+
 #commands to run in the Docker container before starting each job.
 before_script:
   - python --version
   - cd src/
   - pip install --upgrade pip && pip install --no-cache-dir -r ../requirements.txt
-# different stages in the pipeline
+
+  # Stages in the pipeline
 stages:
-  - Analysis
   - Test
-
-#defines the job in Static Analysis
-
-analisis_job:
-  stage: Analysis
-  script:
-    - echo "Aca vamos" 
 
 test_job:
   stage: Test
-  dependencies:
-    - analisis_job
   script:
     - echo "Running tests"
     - flask test
