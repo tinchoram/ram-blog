@@ -33,7 +33,7 @@ deploy:
     name: production
     url: https://kube.tinchoram.com
     kubernetes:
-      namespace: $KUBE_NAMESPACE
+      namespace: gitlab-managed-apps
 
   only:
     - master
