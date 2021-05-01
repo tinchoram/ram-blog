@@ -4,10 +4,19 @@ before_script:
   - python -V # Print out python version for debugging
 
 stages:
+  - install
   - test
+
+install_dependencies:
+  stage: install
+  script:
+    - cd src/
+    - pip install --upgrade pip && pip install --no-cache-dir -r ../requirements.txt
 
 test_job:
   stage: test
+  dependencies:
+    - install_dependencies
   script:
     - echo "Running tests"
-    - pwd
+    - flask test
