@@ -29,6 +29,7 @@ def note_python():
 def note_docker():
     return render_template('docker.html')
 
+
 @app.route('/kubernetes', methods=['GET'])
 def note_kubernetes():
     return render_template('kubernetes.html')
