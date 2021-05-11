@@ -42,7 +42,9 @@ test_flake8:
 
 deploy-master:
   stage: deploy
-  image: bitnami/kubectl:1.14
+  image:
+    name: bitnami/kubectl:1.14
+    entrypoint: [""]
   script:
     - echo $CI_REGISTRY_IMAGE
     - echo $CI_COMMIT_SHA
