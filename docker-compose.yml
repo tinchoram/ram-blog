@@ -32,8 +32,8 @@ services:
     expose:
       - "80"
     environment:
-      - VIRTUAL_HOST=blog.tinchoram.com
-      - LETSENCRYPT_HOST=blog.tinchoram.com
+      - VIRTUAL_HOST=tinchoram.com, notes.tinchoram.com, blog.tinchoram.com
+      - LETSENCRYPT_HOST=tinchoram.com, notes.tinchoram.com, blog.tinchoram.com
       - LETSENCRYPT_EMAIL=tinchoram@tinchoram.com
     depends_on:
       - nginx-proxy
