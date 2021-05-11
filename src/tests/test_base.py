@@ -25,4 +25,4 @@ class MainTest(TestCase):
     def test_index_get(self):
         response = self.client.get(url_for('index'))
 
-        self.assertRedirects(response, url_for('notes'))
+        self.assert200(response)

@@ -4,12 +4,14 @@ import unittest
 app = Flask(__name__)
 
 
+# TEST
 @app.cli.command()
 def test():
     tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner().run(tests)
 
 
+# NOTES
 @app.route('/linux', methods=['GET'])
 def linux():
     # context = {
@@ -40,19 +42,26 @@ def note_go():
     return render_template('go.html')
 
 
+# POST
+@app.route('/gitlab-to-kube', methods=['GET'])
+def post_gitlab_to_kube():
+    return render_template('gitlab-to-kube.html')
+
+
+# INDEX
 @app.route('/notes', methods=['GET'])
 def notes():
-    return render_template('notes.html')
+    return redirect('index')
 
 
 @app.route('/blog', methods=['GET'])
 def blog():
-    return redirect('notes')
+    return redirect('index')
 
 
 @app.route('/', methods=['GET'])
 def index():
-    return redirect('notes')
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
